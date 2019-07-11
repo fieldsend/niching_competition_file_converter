@@ -17,10 +17,18 @@ Unfortunately the result files can grow rather large (I ended up with a zip file
 
 This is acheived by processing each set block in turn (i.e. block starting with a 0 and then zero to many lines with 1 actions, until the next rest is reached), this is then compared to the previous copied block, and any solutions no longer present are written out with a -1 action, and any new with a 1 action. 
 
-Making a jar file from the package with LoopConvert as the Main class will enable you to perform 
+Making a jar file from the package with LoopProcess as the Main class will enable you to perform 
 
 ```
 >> java -jar converter.jar
 ```
 
 will convert all files in the current directory, named as required in the competition, from problem 1 to 20 and run 1 to 50, into the more parsimonious represntation and save them in a folder called reformatted.
+
+Converter converts a single file, e.g. 
+
+```
+>> java Convert problem001run001.dat
+```
+
+will convert the file problem001run001.dat, and save it in a folder named reformatted

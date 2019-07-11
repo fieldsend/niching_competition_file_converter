@@ -5,11 +5,11 @@ The file format defined for entries to the GECCO 2019 Competition on Niching Met
 
 http://www.epitropakis.co.uk/gecco2019/#submission
 
-Gives two accptable ways of generating the .dat files which tracks estimated modes discovered by and algorithm. These have one of three action flags on each line, as taken from the link above:
+Gives two acceptable ways of generating the .dat files which tracks estimated modes discovered by and algorithm. These have one of three action flags on each line, as taken from the link above:
 
--- Reset archive and add solution (0): This action deletes everything that has been reported in the current file and adds the current solution as the first solution in the archive.
--- Add solution (1): This is the normal case where the reported solution is added in the archive.
--- Delete solution (-1): In this case, we search through the archive and delete the reported solution. If the archive does not contain this solution, we do not take any action. Notice that the solutions are hashed by the following features: Solution (x1,x2,...,xd), fes, and time. As such, a solution will be removed only if the exact same solution is found within the archive.
+* Reset archive and add solution (0): This action deletes everything that has been reported in the current file and adds the current solution as the first solution in the archive.
+* Add solution (1): This is the normal case where the reported solution is added in the archive.
+* Delete solution (-1): In this case, we search through the archive and delete the reported solution. If the archive does not contain this solution, we do not take any action. Notice that the solutions are hashed by the following features: Solution (x1,x2,...,xd), fes, and time. As such, a solution will be removed only if the exact same solution is found within the archive.
 
 As such one may write the file so that each time the mode set changes the set is written out with the first solution's action being 0, and all following with action 1. This ensures the dat file represents completely the active mode set on each update, with minium changes to the underlying algorithm. 
 

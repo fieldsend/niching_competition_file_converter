@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Files;
 import java.nio.file.FileSystems;
 import java.nio.charset.StandardCharsets;
+import java.io.IOException;
 
 /**
  * Coverter class is the main colass to convert between 
@@ -65,7 +66,7 @@ public class Converter
         try {
             if (!Files.exists(parentDir))
                 Files.createDirectories(parentDir);
-        } catch (java.io.IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         try (BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8) ) {
@@ -75,7 +76,7 @@ public class Converter
                 writer.write(item.toString());
                 writer.newLine();
             }
-        } catch (java.io.IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
